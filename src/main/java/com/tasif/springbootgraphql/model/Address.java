@@ -1,12 +1,9 @@
 package com.tasif.springbootgraphql.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -14,13 +11,14 @@ import lombok.Data;
 @Data
 @Entity
 @Table
-public class User {
+public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
-	private String userName;
-	private String userEmail;
-	private String userMobile;
-	@OneToMany
-	private List<Address> addresses;
+	private int addressId;
+	private String addressLine1;
+	private String addressLine2;
+	private String addressType;
+	private String district;
+	private String state;
+	private int zipCode;
 }

@@ -5,6 +5,8 @@ schema {
 type Query {
  allUser: [User]
  user( userId: ID): User
+ allAddress: [Address]
+ address(addressId: ID): Address
 }
 
 type User {
@@ -12,4 +14,15 @@ type User {
   userName: String
   userEmail: String
   userMobile: String
+  addresses: [Address]
+}
+
+type Address {
+	addressId: ID
+	addressLine1: String
+	addressLine2:String
+	addressType: String
+	district: String
+	state: String
+	zipCode: Int
 }
