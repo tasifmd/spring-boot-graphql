@@ -12,7 +12,7 @@ import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
 
 @Component
-public class UserDataFetchers implements DataFetcher<List<User>>{
+public class AllUserDataFetchers implements DataFetcher<List<User>>{
 	
 	@Autowired
 	private UserRepository userRepository;

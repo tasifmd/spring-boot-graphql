@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
-import com.tasif.springbootgraphql.datafetcher.UserDataFetchers;
+import com.tasif.springbootgraphql.datafetcher.AllUserDataFetchers;
+import com.tasif.springbootgraphql.datafetcher.SingleUserDataFetcher;
 
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
@@ -29,8 +30,11 @@ public class GraphQlProvider {
 	private GraphQL graphQL;
 	
 	@Autowired
-	private UserDataFetchers userDataFetcher;
+	private AllUserDataFetchers allUserDataFetcher;
 
+	@Autowired
+	private SingleUserDataFetcher singleUserDataFetcher;
+	
 	@Bean
 	public GraphQL graphQL() {
 		return graphQL;
@@ -53,8 +57,8 @@ public class GraphQlProvider {
 
 	private RuntimeWiring buildWiring() {
 		return RuntimeWiring.newRuntimeWiring()
-				.type(newTypeWiring("Query").dataFetcher("allUser", userDataFetcher))
-				//.type(newTypeWiring("User").dataFetcher("author", graphQLDataFetchers.getAuthorDataFetcher()))
+				.type(newTypeWiring("Query").dataFetcher("allUser", allUserDataFetcher))
+				.type(newTypeWiring("Query").dataFetcher("user", singleUserDataFetcher))
 				.build();
 	}
 }
