@@ -1,0 +1,15 @@
+schema {
+ query: Query
+}
+
+type Query {
+ allUser: [User]
+ user( userId: ID): User
+}
+
+type User {
+  userId: ID
+  userName: String
+  userEmail: String
+  userMobile: String
+}

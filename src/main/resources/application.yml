@@ -1,0 +1,16 @@
+# ============================== #
+#         Application            #
+# ============================== #
+server:
+  port: 8090
+  
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dummy
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    
