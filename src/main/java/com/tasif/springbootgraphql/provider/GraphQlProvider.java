@@ -42,7 +42,7 @@ public class GraphQlProvider {
 
 	@PostConstruct
 	public void init() throws IOException {
-		URL url = Resources.getResource("user.graphql");
+		URL url = Resources.getResource("schema.graphql");
 		String sdl = Resources.toString(url, Charsets.UTF_8);
 		GraphQLSchema graphQLSchema = buildSchema(sdl);
 		this.graphQL = GraphQL.newGraphQL(graphQLSchema).build();
