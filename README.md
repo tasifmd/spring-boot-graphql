@@ -14,7 +14,7 @@ request -->
 Get All Address
 ---------------------
 request -->
-{ allAddress { addressId addressLine1 addressLine2n addressType district state zipCode } }
+{ allAddress { addressId addressLine1 addressLine2 addressType district state zipCode } }
 
 Get Single Address
 ---------------------
