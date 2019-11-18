@@ -22,6 +22,6 @@ public class GraphQlController {
 	@PostMapping
 	ResponseEntity<Object> getUsers(@RequestBody String query) {
 		ExecutionResult execute = garphQlProvider.graphQL().execute(query);
-		return new ResponseEntity<>(execute, HttpStatus.OK);
+		return new ResponseEntity<Object>(execute, HttpStatus.OK);
 	}
 }
