@@ -18,7 +18,9 @@ public class SingleUserDataFetcher implements DataFetcher<User> {
 	@Override
 	public User get(DataFetchingEnvironment dataFetchingEnvironment) {
 		int userId = Integer.parseInt(dataFetchingEnvironment.getArgument("userId"));
-		return userRepository.findById(userId).get();
+		User user = userRepository.findById(userId)
+				.orElseThrow(() -> new RuntimeException("No user exist with user id " + userId));
+		return user;
 	}
 
 }

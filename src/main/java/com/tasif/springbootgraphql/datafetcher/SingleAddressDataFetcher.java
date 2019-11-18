@@ -10,14 +10,17 @@ import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
 
 @Component
-public class SingleAddressDataFetcher implements DataFetcher<Address>{
+public class SingleAddressDataFetcher implements DataFetcher<Address> {
 
 	@Autowired
 	private AddressRepository addressRepository;
+
 	@Override
 	public Address get(DataFetchingEnvironment dataFetchingEnvironment) {
 		int addressId = Integer.parseInt(dataFetchingEnvironment.getArgument("addressId"));
-		return addressRepository.findById(addressId).get();
+		Address address = addressRepository.findById(addressId)
+				.orElseThrow(() -> new RuntimeException("No address exist with address id " + addressId));
+		return address;
 	}
 
 }

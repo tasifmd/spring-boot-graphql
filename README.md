@@ -19,4 +19,4 @@ request -->
 Get Single Address
 ---------------------
 request -->
-{ address(addressId: ID){ addressId addressLine1 addressLine2 addressType district state zipCode } }
+{ address(addressId: ID) { addressId addressLine1 addressLine2 addressType district state zipCode } }
