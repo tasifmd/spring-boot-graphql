@@ -2,7 +2,8 @@
 
 Get All User
 --------------------
-request --> { allUser { userId userName userEmail userMobile addresses { addressId addressLine1 addressLine2 
+request --> 
+{ allUser { userId userName userEmail userMobile addresses { addressId addressLine1 addressLine2 
 				addressType district state zipCode } } }
 
 Get Single User
