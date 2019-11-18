@@ -23,26 +23,25 @@ import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
 
-
 import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
 
 @Component
 public class GraphQlProvider {
 
 	private GraphQL graphQL;
-	
+
 	@Autowired
 	private AllUserDataFetchers allUserDataFetcher;
 
 	@Autowired
 	private SingleUserDataFetcher singleUserDataFetcher;
-	
+
 	@Autowired
 	private AllAddressDataFetcher allAddressDataFetcher;
-	
+
 	@Autowired
 	private SingleAddressDataFetcher singleAddressDataFetcher;
-	
+
 	@Bean
 	public GraphQL graphQL() {
 		return graphQL;
