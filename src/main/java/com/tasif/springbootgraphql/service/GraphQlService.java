@@ -1,4 +1,4 @@
-package com.tasif.springbootgraphql.provider;
+package com.tasif.springbootgraphql.service;
 
 import java.io.IOException;
 import java.net.URL;
@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -25,8 +25,8 @@ import graphql.schema.idl.TypeDefinitionRegistry;
 
 import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
 
-@Component
-public class GraphQlProvider {
+@Service
+public class GraphQlService {
 
 	private GraphQL graphQL;
 

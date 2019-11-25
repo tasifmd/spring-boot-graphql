@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tasif.springbootgraphql.provider.GraphQlProvider;
+import com.tasif.springbootgraphql.service.GraphQlService;
 
 import graphql.ExecutionResult;
 
@@ -17,7 +17,7 @@ import graphql.ExecutionResult;
 public class GraphQlController {
 	
 	@Autowired
-	private GraphQlProvider garphQlProvider;
+	private GraphQlService garphQlProvider;
 	
 	@PostMapping
 	ResponseEntity<Object> getUsers(@RequestBody String query) {
