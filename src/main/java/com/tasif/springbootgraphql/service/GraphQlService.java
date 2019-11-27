@@ -63,11 +63,9 @@ public class GraphQlService {
 	}
 
 	private RuntimeWiring buildWiring() {
-		return RuntimeWiring.newRuntimeWiring()
-				.type(newTypeWiring("Query").dataFetcher("allUser", allUserDataFetcher))
+		return RuntimeWiring.newRuntimeWiring().type(newTypeWiring("Query").dataFetcher("allUser", allUserDataFetcher))
 				.type(newTypeWiring("Query").dataFetcher("user", singleUserDataFetcher))
 				.type(newTypeWiring("Query").dataFetcher("allAddress", allAddressDataFetcher))
-				.type(newTypeWiring("Query").dataFetcher("address", singleAddressDataFetcher))
-				.build();
+				.type(newTypeWiring("Query").dataFetcher("address", singleAddressDataFetcher)).build();
 	}
 }
